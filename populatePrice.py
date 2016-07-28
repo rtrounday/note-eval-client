@@ -48,16 +48,28 @@ warnings.simplefilter('ignore')
 wb = openpyxl.load_workbook('data.xlsx')
 sheet = wb.get_sheet_by_name('Jan')
 
+address_col = raw_input("Enter the address (input) column: ")
+zipcode_col = raw_input("Enter the zipcode (input) column: ")
+
+zillow_col = raw_input("Enter Zillow (output) column: ")
+trulia_col = raw_input("Enter Trulia (output) column: ")
+
 driver = webdriver.Firefox()
 for x in range(4, sheet.max_row):
-    address = sheet['B' + str(x)].value
-    zipcode = sheet['E' + str(x)].value
+    address = sheet[address_col + str(x)].value
+    zipcode = sheet[zipcode_col + str(x)].value
+
+    #Skip invalid addresses and zipcodes
     if address is None or zipcode is None:
         continue
-    zillowPrice = "disabled" #instance.getZillowPrice(address, zipcode)
+
+    zillowPrice = instance.getZillowPrice(address, zipcode)
     truliaPrice = instance.getTruliaPrice(driver, address, zipcode)
+
     if zillowPrice != "Not found":
-        sheet['T' + str(x)] = zillowPrice
+        sheet[zillow_col + str(x)] = zillowPrice
+    if truliaPrice != "Not found":
+        sheet[trulia_col + str(x)] = truliaPrice
 
     output = str(address).ljust(30) + str(zipcode).ljust(15)
     output += str(zillowPrice).ljust(30) + str(truliaPrice)
