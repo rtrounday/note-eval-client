@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Loan Notes Assistant</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/stylesheet.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <script src="js/uploader.js"></script>
-  <link rel="stylesheet" href="css/stylesheet.css">
+  <script src="js/signup.js"></script>
+  <script src="js/signUpQuery.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
@@ -48,27 +50,30 @@
 <div class="container-fluid text-center">
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <input type="file" id="hiddenUpload"/>
-      <button type="button" id= "uploader" class="btn btn-primary">Upload File</button>
+      <!-- <input type="file" id="hiddenUpload"/>
+      <button type="button" id= "uploader" class="btn btn-primary">Upload File</button> -->
     </div>
     <div class="col-sm-8 text-left">
       <h1 id="loginHeader">Login</h1>
       <hr>
-      <form role="form">
+      <form role="form" action="" method="get">
         <label id="firstnameLabel" hidden="true"></label>
         <label id="lastnameLabel" hidden="true"></label>
         <label>
-          <input type="text" class="form-control" placeholder="Username"/>
+          <input name="user" type="text" class="form-control" placeholder="Username"/>
         </label>
         <label>
-          <input type="password" class="form-control" placeholder="Password"/>
+          <input name="pass" type="password" class="form-control" placeholder="Password"/>
         </label>
         <label id="confirmPass"></label>
         <label>
-          <button type="submit" id="login" class="btn btn-primary">Login In</button>
+          <button type="button" id="login" onclick="signInWithFirebase(this.form)" class="btn btn-primary">Login In</button>
         </label>
         <label>
           <button type="button" id="signUp" class="btn btn-info">Create Account</button>
+        </label>
+        <label id="confirmSignUp">
+          <p id="errorMessage"><p>
         </label>
       </form>
     </div>
