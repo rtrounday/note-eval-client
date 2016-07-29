@@ -10,8 +10,16 @@
 /* Set gray background color and 100% height */
 .sidenav {
   padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #f1f1f1;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidenav > .btn {
+  margin: auto;
+  padding: auto;
 }
 
 /* Set black background color, white text and some padding */
@@ -26,6 +34,8 @@ footer {
   .sidenav {
     height: auto;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
   }
   .row.content {height:auto;}
 }
