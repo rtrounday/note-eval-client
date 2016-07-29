@@ -45,7 +45,7 @@ class RealEstate:
 instance = RealEstate()
 
 warnings.simplefilter('ignore')
-wb = openpyxl.load_workbook('data.xlsx')
+wb = openpyxl.load_workbook('data/data.xlsx')
 sheet = wb.get_sheet_by_name('Jan')
 
 address_col = raw_input("Enter the address (input) column: ")
@@ -77,4 +77,4 @@ for x in range(4, sheet.max_row):
     print output
 
 
-wb.save('data.xlsx')
+wb.save('data/data.xlsx')
