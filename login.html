@@ -13,6 +13,7 @@
   <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
   <script src="js/firebase_config.js"></script>
 </head>
@@ -49,10 +50,10 @@
         <hr>
         <form role="form" action="" method="get">
           <label id="firstnameLabel" hidden="true">
-            <input type="text" class="form-control" placeholder="First Name"/>
+            <input name="firstname" type="text" class="form-control" placeholder="First Name"/>
           </label>
           <label id="lastnameLabel" hidden="true">
-            <input type="text" class="form-control" placeholder="Last Name"/>
+            <input name="lastname" type="text" class="form-control" placeholder="Last Name"/>
           </label>
           <label>
             <input name="user" type="text" class="form-control" placeholder="Email Address"/>

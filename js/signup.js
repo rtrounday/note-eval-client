@@ -2,9 +2,15 @@ function signUpWithFirebase(form)
 {
   var email = form.user.value;
   var password = form.pass.value;
+  var first_name = form.firstname.value;
+  var last_name = form.lastname.value;
   firebase.auth().createUserWithEmailAndPassword(email, password)
   .then(
     function(result){
+      var userId = result.uid;
+      firebase.database().ref('users/' + userId).set(
+        {username: first_name, lastName: last_name, email: email}
+      );
       signInWithFirebase(form);
     },
     function(error){

@@ -1,0 +1,12 @@
+$(document).ready(function(){
+  firebase.auth().onAuthStateChanged(function(user){
+    if(user){
+      var userUid = user.uid;
+      firebase.database().ref('users/' + userUid + '/username').on(
+        'value', function(snapshot){
+          $("#welcome").text("Hello, " + snapshot.val());
+        }
+      );
+    }
+  })
+});
