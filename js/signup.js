@@ -10,6 +10,10 @@ function signUpWithFirebase(form)
     function(error){
     var errorCode = error.code;
     var errorMessage = error.message;
+    if (email == "")
+    {
+      return;
+    }
     $(document).ready(function()
     {
       $("#errorMessage").text(errorMessage).css({"color": "red", "text-align": "center"})
@@ -30,6 +34,10 @@ function signInWithFirebase(form)
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
+      if (email == "")
+      {
+        return;
+      }
       $(document).ready(function()
       {
         $("#errorMessage").text(errorMessage).css({"color": "red", "text-align": "center"})
