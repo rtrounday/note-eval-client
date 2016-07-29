@@ -54,3 +54,11 @@ label {
   display: block;
   margin: auto;
 }
+
+img {
+  width:250px;
+  height:250px;
+  margin:auto;
+  align:middle;
+  display:block;
+}
