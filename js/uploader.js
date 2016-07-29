@@ -16,6 +16,7 @@ $(document).ready(function(){
     }, function() {
       // Handle successful uploads on complete
       var downloadURL = uploadTask.snapshot.downloadURL;
+      firebase.database().ref('users/' + userUid + "/files").push().update({file_archive: downloadURL, name: file.name}); 
     });
   })
 
