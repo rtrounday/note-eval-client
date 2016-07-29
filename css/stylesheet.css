@@ -30,8 +30,8 @@ footer {
   .row.content {height:auto;}
 }
 
-#hiddenUpload {
-  visibility: hidden;
+#uploader {
+  opacity: 0;
 }
 
 label {

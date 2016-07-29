@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Loan Notes Assistant</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
+  <script src="js/firebase_config.js"></script>
   <script src="js/uploader.js"></script>
+  <script src="js/signout.js"></script>
   <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
@@ -29,7 +35,9 @@
           <li><a href="#">Contact</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li id="greeting"></li>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" onclick="signOut()"><span class="glyphicon glyphicon-log-out"></span> Log out</a></li>
+          </ul>
         </ul>
       </div>
     </div>
@@ -38,13 +46,13 @@
   <div class="container-fluid text-center">
     <div class="row content">
       <div class="col-sm-2 sidenav">
-        <input type="file" id="hiddenUpload"/>
-        <button type="button" id= "uploader" class="btn btn-primary">Upload File</button>
+        <input type="file" accept=".xlsx" id="uploader" />
+        <button type="button" class="btn btn-primary" id= "hiddenUploader" >Upload File</button>
       </div>
       <div class="col-sm-8 text-left">
         <h1>Loan Notes Assistant</h1>
         <hr>
-        <h3>A web client for your real estate needs</h3>
+        <h3>A web client for all your real estate needs</h3>
       </div>
       <div class="col-sm-2 sidenav">
       </div>
