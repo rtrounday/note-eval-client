@@ -55,6 +55,11 @@ label {
   margin: auto;
 }
 
+#filesView {
+  flex-direction: column;
+  background-color: green;
+  margin: auto;
+}
 img {
   width:250px;
   height:250px;

@@ -15,6 +15,7 @@
   <script src="js/firebase_config.js"></script>
   <script src="js/uploader.js"></script>
   <script src="js/retriveUser.js"></script>
+  <script src="js/viewFiles.js"></script>
   <script src="js/signout.js"></script>
   <link rel="stylesheet" href="css/stylesheet.css">
 </head>
@@ -45,13 +46,14 @@
       <div class="col-sm-2 sidenav">
         <input type="file" accept=".xlsx" id="uploader" />
         <button type="button" class="btn btn-primary" id= "hiddenUploader" >Upload File</button>
-        <button type="button" class="btn btn-info" >View Files</button>
+        <button type="button" class="btn btn-info" id="viewFiles" >View Files</button>
         <button type="button" class="btn btn-success" >Update Prices</button>
       </div>
       <div class="col-sm-8 text-left">
         <h1>Loan Notes Assistant</h1>
         <hr>
         <h3 id="welcome"></h3>
+        <div id="filesView" style="visibility: hidden">View</div>
       </div>
       <div class="col-sm-2 sidenav">
       </div>
