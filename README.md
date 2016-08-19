@@ -1,5 +1,6 @@
-# RealEstateProject (Beta, unstable)
-An python app that reads an Excel file with Real Estate addresses and autopopulates the price columns by querying sites such as Zillow and Trulia. As of now, a lot of the behavior is hard-coded; working on generalizing the behavior for future releases. Working on a site to host
-the application for ease of client calling. 
+# RealEstateProject (Stage, stable)
+A Web Application to track market performance of Real Estate properties through uploading loan notes in the form of Excel sheets. Queries APIs such as Zillow and Trulia through a Python script to receive real time data. Uses Firebase for backend support through creating a full User Account System, User Storage, and Metadata Archive Database.  
 
-Hosting site on amazonS3: loannotestracker.s3-website-us-west-1.amazonaws.com
+Hosting static site on amazonS3: loannotestracker.s3-website-us-west-1.amazonaws.com
+
+Will have a real domain name when it is ready for prod. 
