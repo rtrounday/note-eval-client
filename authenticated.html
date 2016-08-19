@@ -12,12 +12,12 @@
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
+  <link rel="stylesheet" href="css/stylesheet.css">
   <script src="js/firebase_config.js"></script>
   <script src="js/uploader.js"></script>
   <script src="js/retriveUser.js"></script>
   <script src="js/viewFiles.js"></script>
   <script src="js/signout.js"></script>
-  <link rel="stylesheet" href="css/stylesheet.css">
 </head>
 <body>
 
@@ -29,7 +29,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+        <a class="navbar-brand" href="#" onclick="goHome()"><span class="glyphicon glyphicon-home"></span></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
@@ -53,7 +53,8 @@
         <h1>Loan Notes Assistant</h1>
         <hr>
         <h3 id="welcome"></h3>
-        <div id="filesView" style="visibility: hidden">View</div>
+        <div id="filesView">
+        </div>
       </div>
       <div class="col-sm-2 sidenav">
       </div>

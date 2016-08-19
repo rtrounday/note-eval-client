@@ -57,7 +57,8 @@ label {
 
 #filesView {
   flex-direction: column;
-  background-color: green;
+  background-color: 	#7FFFD4;
+  display: none;
   margin: auto;
 }
 img {
