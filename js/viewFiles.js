@@ -8,7 +8,12 @@ function updateFiles(userUid)
         var fileName = file.child("name").val();
         var fileURL = file.child("file_archive").val();
         var content = "<a href=" + fileURL + ">"
-                    + "<li class='list-group-item list-group-item-success'>" + fileName + "</li>"
+                    +   "<li class='list-group-item list-group-item-success'>"
+                    +     "<p>" + fileName + "</p>"
+                    +     "<a href='#' id ='updatePrices'>"
+                    +       "<span class='glyphicon glyphicon-refresh'></span>"
+                    +     "</a>"
+                    +   "</li>"
                     + "</a>";
         $(".list-group").append(content);
       });

@@ -55,16 +55,29 @@ label {
   margin: auto;
 }
 
-#filesView {
-  flex-direction: column;
-  background-color: 	#7FFFD4;
-  display: none;
-  margin: auto;
-}
 img {
   width:250px;
   height:250px;
   margin:auto;
   align:middle;
   display:block;
+}
+/* Formatting for list of files */
+
+#filesView {
+  display: none;
+  margin: auto;
+}
+
+.list-group {
+  width: 100%;
+}
+.list-group li {
+  width: 100%;
+  list-style-type: none;
+  float: left;
+}
+.list-group li #updatePrices {
+  margin: auto;
+  float: right;
 }

@@ -9,13 +9,13 @@ function createUser(first_name, last_name, email, password, form){
       signInWithFirebase(form);
     },
     function(error){
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    $("#alert").show();
-    $("#alert").removeClass();
-    $("#alert").addClass("alert alert-danger");
-    $("#alertMessage").replaceWith("<p id='alertMessage'>"+ errorMessage + "</p>");
-  }
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      $("#alert").show();
+      $("#alert").removeClass();
+      $("#alert").addClass("alert alert-danger");
+      $("#alertMessage").replaceWith("<p id='alertMessage'>"+ errorMessage + "</p>");
+    }
   );
 }
 function login(email, password){
@@ -32,27 +32,43 @@ function login(email, password){
       $("#alert").addClass("alert alert-danger");
       $("#alertMessage").replaceWith("<p id='alertMessage'>"+ errorMessage + "</p>");
     });
-}
-function signUpWithFirebase(form)
-{
-  var email = form.user.value;
-  var password = form.pass.value;
-  var confirmPass = form.confirmPass.value;
-  var first_name = form.firstname.value;
-  var last_name = form.lastname.value;
-  // Validating the information on the form before submitting
-  var success = validateForm(email, password, first_name, last_name,  confirmPass);
-  if (success){
-    createUser(first_name, last_name, email, password, form);
   }
-}
-function signInWithFirebase(form)
-{
-  var email = form.user.value;
-  var password = form.pass.value;
-  var success = validateForm(email, password);
-  if (success){
-    login(email, password);
+  function signUpWithFirebase(form)
+  {
+    var email = form.user.value;
+    var password = form.pass.value;
+    var confirmPass = form.confirmPass.value;
+    var first_name = form.firstname.value;
+    var last_name = form.lastname.value;
+    // Validating the information on the form before submitting
+    var success = validateForm(email, password, first_name, last_name,  confirmPass);
+    if (success){
+      createUser(first_name, last_name, email, password, form);
+    }
   }
+  function signInWithFirebase(form)
+  {
+    var email = form.user.value;
+    var password = form.pass.value;
+    var success = validateForm(email, password);
+    if (success){
+      login(email, password);
+    }
 
   }
+  $(document).ready(function(){
+      $('#signUp').click(function(){
+        $("#alert").show();
+        $("#firstnameLabel").show();
+        $("#lastnameLabel").show();
+        $("#confirmPass").show();
+        $("#loginHeader").text("Sign Up");
+      });
+      $('#login').click(function(){
+        $("#alert").show();
+        $("#firstnameLabel").hide();
+        $("#lastnameLabel").hide();
+        $("#confirmPass").hide();
+        $("#loginHeader").text("Login");
+      })
+  });
