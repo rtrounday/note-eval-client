@@ -77,7 +77,7 @@ img {
   list-style-type: none;
   float: left;
 }
-.list-group li #updatePrices {
+.list-group li .fileSync {
   margin: auto;
   float: right;
 }

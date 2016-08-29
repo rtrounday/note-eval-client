@@ -10,7 +10,7 @@ function updateFiles(userUid)
         var content = "<a href=" + fileURL + ">"
                     +   "<li class='list-group-item list-group-item-success'>"
                     +     "<p>" + fileName + "</p>"
-                    +     "<a href='#' id ='updatePrices'>"
+                    +     "<a href='#' class ='fileSync' id=" + fileURL + ">"
                     +       "<span class='glyphicon glyphicon-refresh'></span>"
                     +     "</a>"
                     +   "</li>"
