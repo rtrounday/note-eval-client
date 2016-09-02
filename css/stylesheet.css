@@ -55,6 +55,19 @@ label {
   margin: auto;
 }
 
+/* Right header formatting*/
+.navbar-right {
+  display: inline-block;
+}
+
+/* Welcome message formatting*/
+#welcome {
+  margin-top: 10px;
+  margin-right: 20px;
+  font-size: 1em;
+  color: #f1f1f1
+}
+
 img {
   width:250px;
   height:250px;

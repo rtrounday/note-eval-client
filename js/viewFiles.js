@@ -22,7 +22,6 @@ function updateFiles(userUid)
 $(document).ready(function(){
   $("#viewFiles").on('click', function(){
     $('#filesView').show();
-    $("#welcome").hide();
     $("#filesView").append("<ul class='list-group'></ul>");
     firebase.auth().onAuthStateChanged(function(user){
       if (user)
