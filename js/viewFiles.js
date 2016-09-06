@@ -1,7 +1,6 @@
 function updateFiles(userUid)
 {
   firebase.database().ref('users/' + userUid + "/files").on('value', function(snapshot){
-      $("#filesView").empty();
       $("#filesView").append("<ul class='list-group'></ul>");
       $(".list-group").empty();
       snapshot.forEach(function(file){
@@ -22,7 +21,8 @@ function updateFiles(userUid)
 $(document).ready(function(){
   $("#viewFiles").on('click', function(){
     $('#filesView').show();
-    $("#filesView").append("<ul class='list-group'></ul>");
+    $("#listingView").hide()
+    $("#filesView").empty();
     firebase.auth().onAuthStateChanged(function(user){
       if (user)
       {

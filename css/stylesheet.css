@@ -77,7 +77,7 @@ img {
 }
 /* Formatting for list of files */
 
-#filesView {
+#filesView, #listingView {
   display: none;
   margin: auto;
 }
