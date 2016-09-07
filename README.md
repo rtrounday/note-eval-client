@@ -1,9 +1,9 @@
 # RealEstateProject
 
-End Goal: A Web Application to track market performance of Real Estate properties through uploading loan notes in the form of Excel sheets. Queries APIs such as Zillow and Trulia through a Python script to receive real time data. Uses Firebase for backend support through creating a full User Account System, User Storage, and Metadata Archive Database.
+End Goal: A Web Application to track market performance of Real Estate properties through uploading loan notes in the form of Excel sheets. Queries APIs such as Zillow and Trulia through a Python script to receive real time data. Uses Firebase for backend support through creating a full User Account System, User Storage, and Metadata Archive Database. Amazon S3 hosts the static web documents as a fail-over. An Amazon EC2 instance running Tomcat will host the app. 
 
 ## Local Build
-To build locally, navigate to the "site" directory run
+To build locally, navigate to the "site" directory and run
 ```
 mvn clean package
 ```
