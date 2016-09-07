@@ -3,7 +3,7 @@
 End Goal: A Web Application to track market performance of Real Estate properties through uploading loan notes in the form of Excel sheets. Queries APIs such as Zillow and Trulia through a Python script to receive real time data. Uses Firebase for backend support through creating a full User Account System, User Storage, and Metadata Archive Database.
 
 ## Local Build
-To build locally, run
+To build locally, navigate to the "site" directory run
 ```
 mvn clean package
 ```
