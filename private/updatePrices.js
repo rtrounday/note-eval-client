@@ -9,7 +9,7 @@ $(document).ready(function(){
       data: JSON.stringify({'file' : file + "", 'userUid' : userUid}),
       crossDomain: true,
       success: function(result){
-        alert(result);
+        console.log(result);
       }})
     });
   });
