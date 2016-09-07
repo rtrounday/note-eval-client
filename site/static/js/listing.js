@@ -4,14 +4,12 @@ function getListing(userUid){
       $("#listingView").append("<ul class='list-group'></ul>");
       $(".list-group").empty();
       snapshot.forEach(function(note){
-        var noteUid = note.key;
-        var address = note.child("Street Address ").val();
-        var city = note.child("City").val();
-        var UPB = note.child("Current UPB").val();
-        var query = '/notedetails?userId=' + userUid + '?noteId=' + noteUid;
-        var content =  "<li class='list-group-item list-group-item-info'>"
-                    +     "<a href=" + query + ">" + address + '\t' + city + "\t$" + UPB + "</a>"
-                    +   "</li>";
+        var address = note.child("City").val();
+        var content = "<a>"
+                    +   "<li class='list-group-item list-group-item-info'>"
+                    +     "<p>List Entry</p>"
+                    +   "</li>"
+                    + "</a>";
         $(".list-group").append(content);
       });
   });

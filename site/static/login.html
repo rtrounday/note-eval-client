@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Loan Notes Assistant</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/stylesheet.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="private/validateForm.js"></script>
+  <script src="js/signup.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-storage.js"></script>
+  <script src="private/firebase_config.js"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid text-center">
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+      </div>
+      <div class="col-sm-8 text-left" id ="mainView">
+        <h1 id="loginHeader">Login</h1>
+        <hr>
+        <form role="form" action="" method="get">
+          <label id="firstnameLabel" hidden="true">
+            <input name="firstname" type="text" class="form-control" placeholder="First Name"/>
+          </label>
+          <label id="lastnameLabel" hidden="true">
+            <input name="lastname" type="text" class="form-control" placeholder="Last Name"/>
+          </label>
+          <label>
+            <input name="user" type="text" class="form-control" placeholder="Email Address"/>
+          </label>
+          <label>
+            <input name="pass" type="password" class="form-control" placeholder="Password"/>
+          </label>
+          <label id="confirmPass" hidden="true">
+            <input name="confirmPass" type="password" class="form-control" placeholder="Confirm Password"/>
+          </label>
+          <label>
+            <button type="button" id="login" onclick="signInWithFirebase(this.form)" class="btn btn-primary">Login In</button>
+          </label>
+          <label>
+              <button type="button" onclick="signUpWithFirebase(this.form)"id="signUp" class="btn btn-info">Create Account</button>
+          </label>
+          <label>
+              <p id="errorMessage"><p>
+              <div id = "alert">
+                <p id = "alertMessage"></p>
+              </div>
+          </label>
+          </form>
+        </div>
+        <div class="col-sm-2 sidenav">
+
+        </div>
+      </div>
+    </div>
+
+    <footer class="container-fluid text-center">
+      <p>By Sandeep Raghunandhan</p>
+    </footer>
+
+  </body>
+  </html>
