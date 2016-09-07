@@ -1,3 +1,4 @@
+// Listens for changes to the firebase database and updates file listing
 function updateFiles(userUid)
 {
   firebase.database().ref('users/' + userUid + "/files").on('value', function(snapshot){
@@ -18,6 +19,7 @@ function updateFiles(userUid)
       });
   });
 }
+// Displays the list of upload files to the user
 $(document).ready(function(){
   $("#viewFiles").on('click', function(){
     $('#filesView').show();
