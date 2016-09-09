@@ -1,14 +1,10 @@
 package com.loannotes.site;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 
-import static io.restassured.RestAssured.*;
-import static io.restassured.matcher.RestAssuredMatchers.*;
-import static org.hamcrest.Matchers.*; 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.client.RestTemplate; 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam; 
 
@@ -19,7 +15,8 @@ public class NoteController {
 	private TreeMap<String, Object> getNoteDetails(String userUid, String noteUid){
 		TreeMap<String, Object> note = new TreeMap<String, Object>(); 
 		String getNoteEndpoint = String.format(databaseURLTemplate, userUid, noteUid, API_SECRET); 
-		String response = given().get(getNoteEndpoint).then().extract().asString().replace("}", "")
+		RestTemplate request = new RestTemplate();
+		String response = request.getForObject(getNoteEndpoint, String.class).replace("}", "")
 				.replace("{", "")
 				.replace("\n", "")
 				.replace("\"", "");
