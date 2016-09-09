@@ -5,7 +5,7 @@ function getListing(userUid){
       $(".list-group").empty();
       snapshot.forEach(function(note){
         var noteUid = note.key;
-        var address = note.child("Street Address ").val();
+        var address = note.child("Street Address").val();
         var city = note.child("City").val();
         var UPB = note.child("Current UPB").val();
         var query = '/notedetails?userId=' + userUid + '&noteId=' + noteUid;
