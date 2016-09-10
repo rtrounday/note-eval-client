@@ -10,4 +10,8 @@
 
 - Using Springboot to get a templated detailed view of individual Loan Notes
 - Eliminated null notes from the loan note listing on the server side 
+- 
+###Beta v1.0.2
+
+- Bootstrapped Detailed Notes Page
 
