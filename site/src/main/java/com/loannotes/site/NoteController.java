@@ -32,7 +32,7 @@ public class NoteController {
 			@RequestParam(value="noteId", required=true) String noteId, Model model){
 		TreeMap<String, Object> note = getNoteDetails(userId, noteId); 
 		model.addAllAttributes(note);
-		return "index"; 
+		return "note"; 
 	}
 
 }
