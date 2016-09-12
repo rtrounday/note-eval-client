@@ -5,8 +5,10 @@ function createUser(first_name, last_name, email, password, form){
       var userId = result.uid;
       firebase.database().ref('users/' + userId).set(
         {username: first_name, lastName: last_name, email: email}
-      );
-      signInWithFirebase(form);
+      ).then(function(result){
+    	  signInWithFirebase(form);
+      });
+      
     },
     function(error){
       var errorCode = error.code;
@@ -32,6 +34,32 @@ function login(email, password){
       $("#alert").addClass("alert alert-danger");
       $("#alertMessage").replaceWith("<p id='alertMessage'>"+ errorMessage + "</p>");
     });
+  }
+  function signInFacebook(){
+	  var provider = new firebase.auth.FacebookAuthProvider();
+	  provider.addScope('public_profile');
+	  firebase.auth().signInWithPopup(provider).then(function(result){
+		  var token = result.credential.accessToken;
+		  var user = result.user; 
+		  var email = user.email; 
+		  var name = user.displayName.split(" "); 
+		  var first_name = name[0]; 
+		  var last_name = name[1]; 
+		  var userId = user.uid; 
+	      firebase.database().ref('users/' + userId).set(
+	    	        {username: first_name, lastName: last_name, email: email}
+	    	      ).then(function(result){
+	    	    	  document.location.href="authenticated.html";
+	      });
+	      
+	  }).catch(function(error){
+		  var errorCode = error.code;
+		  var errorMessage = error.message;
+		  $("#alert").show();
+		  $("#alert").removeClass();
+		  $("#alert").addClass("alert alert-danger");
+		  $("#alertMessage").replaceWith("<p id='alertMessage'>"+ errorMessage + "</p>"); 
+	  })
   }
   function signUpWithFirebase(form)
   {
