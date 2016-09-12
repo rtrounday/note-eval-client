@@ -14,3 +14,6 @@
 ###Beta v1.0.2
 - Bootstrapped Detailed Notes Page
 
+###Beta v1.0.3
+- Facebook Sign In Available
+
