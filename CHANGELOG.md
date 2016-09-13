@@ -22,3 +22,4 @@
 - Fixed issues with duplicate files being displayed in the listing
 - Scrollable list of loan notes
 - Improved upload notifications displayed
+- Hotfix 1: Resolve login to home navigation issues and notifications not appearing sometimes
