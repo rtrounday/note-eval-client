@@ -5,7 +5,7 @@
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {height: 450px}
+.row.content {height: 100vh}
 
 /* Set gray background color and 100% height */
 .sidenav {
@@ -37,7 +37,7 @@ footer {
     display: flex;
     flex-direction: column;
   }
-  .row.content {height:auto;}
+  .row.content, .list-group {height:auto;}
 }
 
 #uploader {
@@ -84,6 +84,8 @@ img {
 
 .list-group {
   width: 100%;
+  overflow-y: scroll;
+  height: 450px;
 }
 .list-group li {
   width: 100%;
