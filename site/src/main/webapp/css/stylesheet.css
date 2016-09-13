@@ -2,8 +2,20 @@
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
+  background-color:#009966;
+}
+.navbar-inverse .navbar-nav>li>a, #home {
+  color: #f3f3f3;
 }
 
+.navbar-inverse .navbar-nav>.active>a{
+  background-color:  #003333;
+}
+.navbar-inverse .navbar-nav>.active>a:focus,
+.navbar-inverse .navbar-nav>.active>a:hover{
+  color:#fff;
+  background-color: #003300;
+}
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content{height: 100vh}
 
@@ -24,7 +36,7 @@
 
 /* Set black background color, white text and some padding */
 footer {
-  background-color: #555;
+  background-color:#009966;
   color: white;
   padding: 15px;
 }
@@ -44,6 +56,7 @@ footer {
   .row.content, .list-group {height:auto;}
 }
 
+/* Make the ugly, default uploader hidden */
 #uploader {
   opacity: 0;
 }
@@ -65,13 +78,13 @@ label {
 }
 
 /* Welcome message formatting*/
-#welcome {
+#profile {
   margin-top: 10px;
-  margin-right: 20px;
   font-size: 1em;
   color: #f1f1f1
 }
 
+/* Formatting for the author's image*/
 img {
   width:250px;
   height:250px;
