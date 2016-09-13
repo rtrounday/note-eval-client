@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Loan Notes Assistant</title>
+  <meta charset="utf-8"></meta>
+  <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" th:href="@{css/stylesheet.css}"/>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">	
+        <a class="navbar-brand" href="authenticated.html"><span class="glyphicon glyphicon-arrow-left"></span></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid text-center">
+    <div class="row content">
+      <div class="col-sm-2 sidenav">
+      </div>
+      <div class="col-sm-8 text-left">
+            <p th:text="'Address: ' + ${StreetAddress}" />
+    <p th:text="'City: ' + ${City}" />
+    <p th:text="'State: ' + ${State}" />
+    <p th:text="'Zipcode: ' + ${Zip}" />
+    <p th:text="'Property Type: ' + ${PropertyType}" />
+    <p th:text="'Date of Note: ' + ${DateofNote}" />
+    <p th:text="'Current Unpaid Balance: ' + ${CurrentUPB}" />
+    <p th:text="'Rate: ' + ${Rate}" />
+    <p th:text="'Remaining Term: ' + ${RemainingTerm}" />
+    <p th:text="'Last Payment Received: ' + ${LastPaymentReceived}" />
+    <p th:text="'Next Payment Due: ' + ${NextPaymentDue}" />
+    <p th:text="'BPO Value: ' + ${BPOValue}" />
+    <p th:text="'ITV: ' + ${ITV}" />
+    <b th:text="'Titanium Price: ' + ${TitaniumPrice}" />
+	<b th:text="'RPR: ' + ${RPR}" />
+	<b th:text="'Rent: ' + ${Rent}" />
+    <b th:text="'Zillow Price: ' + ${Zillow}" />
+    <b th:text="'Trulia Price: ' + ${Trulia}" />
+    <b th:text="'Comments: ' + ${Comments}" />
+      </div>
+      <div class="col-sm-2 sidenav">
+      </div>
+    </div>
+  </div>
+
+  <footer class="container-fluid text-center">
+    <p>By Sandeep Raghunandhan</p>
+  </footer>
+
+</body>
+</html>
