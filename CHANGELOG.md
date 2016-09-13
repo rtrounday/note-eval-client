@@ -17,3 +17,8 @@
 ###Beta v1.0.3
 - Facebook Sign In Available
 
+###Beta v1.0.4
+- Set up theme color in user interface
+- Fixed issues with duplicate files being displayed in the listing
+- Scrollable list of loan notes
+- Improved upload notifications displayed

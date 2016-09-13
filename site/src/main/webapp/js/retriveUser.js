@@ -8,7 +8,8 @@ function goHome(){
           $("#welcome").show();
         }
       );
-      $("#filesView").hide();
+      $("#filesView, #listingView").hide();
+      $("#main").show();
     }
   });
 }
