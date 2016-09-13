@@ -19,7 +19,7 @@ function getListing(userUid){
 $(document).ready(function(){
   $("#viewListing").on('click', function(){
     $("#listingView").show()
-    $("#filesView").hide()
+    $("#filesView, #main").hide()
     $("#listingView").empty();
     firebase.auth().onAuthStateChanged(function(user){
       if (user)

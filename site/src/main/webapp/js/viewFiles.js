@@ -22,7 +22,7 @@ function updateFiles(userUid)
 $(document).ready(function(){
   $("#viewFiles").on('click', function(){
     $('#filesView').show();
-    $("#listingView").hide()
+    $("#listingView, #main").hide()
     $("#filesView").empty();
     firebase.auth().onAuthStateChanged(function(user){
       if (user)
