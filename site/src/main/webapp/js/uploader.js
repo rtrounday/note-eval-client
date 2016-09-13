@@ -4,7 +4,7 @@ function upload(file, userUid, rawRef){
     // Observe state change events such as progress, pause, and resume
   }, function(error) {
     // Handle unsuccessful uploads
-    $("##notif").append(
+    $("#notif").append(
     "<div class='alert alert-danger'>" +
     "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>" +
     "<strong>Upload Failed: </strong>Internal Server Error." +
@@ -18,7 +18,7 @@ function upload(file, userUid, rawRef){
       firebase.database().ref('users/' + userUid + "/files/" + fileUid).update(
         {file_archive: downloadURL, name: file.name, uid: fileUid}
       );
-      $("##notif").append(
+      $("#notif").append(
       "<div class='alert alert-success'>" +
       "<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>" +
       "<strong>Upload Complete</strong>" +
