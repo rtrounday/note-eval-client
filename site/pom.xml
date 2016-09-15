@@ -4,7 +4,7 @@
 
 	<groupId>com.loannotes</groupId>
 	<artifactId>loanotes_site</artifactId>
-	<version>1.0.4.beta-hotfix2</version>
+	<version>1.0.4.beta-hotfix3</version>
 	<packaging>war</packaging>
 
 	<name>site</name>
