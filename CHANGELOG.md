@@ -24,3 +24,4 @@
 - Improved upload notifications displayed
 - Hotfix 1: Resolve login to home navigation issues and notifications not appearing sometimes
 - Hotfix 2: Fix the issue where Facebook signedIn users had their data disappear after each session
+- Hotfix 3: Favicon (app launcher)
