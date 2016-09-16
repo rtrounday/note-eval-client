@@ -25,3 +25,7 @@
 - Hotfix 1: Resolve login to home navigation issues and notifications not appearing sometimes
 - Hotfix 2: Fix the issue where Facebook signedIn users had their data disappear after each session
 - Hotfix 3: Favicon (app launcher)
+
+###Beta v1.1
+-Google Maps API integrated with detailed notes view
+-Removed null fields from the detailed view

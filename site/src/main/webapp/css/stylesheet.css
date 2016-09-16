@@ -4,7 +4,7 @@
   border-radius: 0;
   background-color:#009966;
 }
-.navbar-inverse .navbar-nav>li>a, #home {
+.navbar-inverse .navbar-nav>li>a, #home, #back {
   color: #f3f3f3;
 }
 
@@ -34,7 +34,7 @@
   padding: auto;
 }
 
-/* Set black background color, white text and some padding */
+/* Set green background color, white text and some padding */
 footer {
   background-color:#009966;
   color: white;
