@@ -23,7 +23,8 @@ public class NoteController {
 		StringTokenizer tokenizer = new StringTokenizer(response, ",");
 		while(tokenizer.hasMoreTokens()){
 			String[] pair = tokenizer.nextToken().split(":");
-			note.put(pair[0].replace(" ", ""), pair[1]);
+			if (pair.length == 2)
+				note.put(pair[0].replace(" ", ""), pair[1]);
 		}
 		return note; 
 	}
