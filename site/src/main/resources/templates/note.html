@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" th:href="@{css/stylesheet.css}"/>
+  <link rel="stylesheet" type="text/css" th:href="@{css/stylesheet.css}"></link>
 </head>
 <body>
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand" href="authenticated.html"><span class="glyphicon glyphicon-arrow-left"></span></a>
+        <a class="navbar-brand" href="authenticated.html"><span id="back" class="glyphicon glyphicon-arrow-left"></span></a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
       </div>
@@ -27,24 +27,27 @@
       </div>
       <div class="col-sm-8 text-left">
             <p th:text="'Address: ' + ${StreetAddress}" />
-    <p th:text="'City: ' + ${City}" />
-    <p th:text="'State: ' + ${State}" />
-    <p th:text="'Zipcode: ' + ${Zip}" />
-    <p th:text="'Property Type: ' + ${PropertyType}" />
-    <p th:text="'Date of Note: ' + ${DateofNote}" />
-    <p th:text="'Current Unpaid Balance: ' + ${CurrentUPB}" />
-    <p th:text="'Rate: ' + ${Rate}" />
-    <p th:text="'Remaining Term: ' + ${RemainingTerm}" />
-    <p th:text="'Last Payment Received: ' + ${LastPaymentReceived}" />
-    <p th:text="'Next Payment Due: ' + ${NextPaymentDue}" />
-    <p th:text="'BPO Value: ' + ${BPOValue}" />
-    <p th:text="'ITV: ' + ${ITV}" />
-    <b th:text="'Titanium Price: ' + ${TitaniumPrice}" />
-	<b th:text="'RPR: ' + ${RPR}" />
-	<b th:text="'Rent: ' + ${Rent}" />
-    <b th:text="'Zillow Price: ' + ${Zillow}" />
-    <b th:text="'Trulia Price: ' + ${Trulia}" />
-    <b th:text="'Comments: ' + ${Comments}" />
+    <p th:if = "${City !=null}" th:text="'City: ' + ${City}" />
+    <p th:if = "${State !=null}" th:text="'State: ' + ${State}" />
+    <p th:if = "${Zip !=null}" th:text="'Zipcode: ' + ${Zip}" />
+    <p th:if = "${PropertyType !=null}" th:text="'Property Type: ' + ${PropertyType}" />
+    <p th:if = "${DateofNote !=null}" th:text="'Date of Note: ' + ${DateofNote}" />
+    <p th:if = "${CurrentUPB !=null}" th:text="'Current Unpaid Balance: ' + ${CurrentUPB}" />
+    <p th:if = "${Rate !=null}" th:text="'Rate: ' + ${Rate}" />
+    <p th:if = "${RemainingTerm !=null}" th:text="'Remaining Term: ' + ${RemainingTerm}" />
+    <p th:if = "${LastPaymentReceived !=null}" th:text="'Last Payment Received: ' + ${LastPaymentReceived}" />
+    <p th:if = "${NextPaymentDue !=null}" th:text="'Next Payment Due: ' + ${NextPaymentDue}" />
+    <p th:if = "${BPOValue !=null}" th:text="'BPO Value: ' + ${BPOValue}" />
+    <p th:if = "${ITV !=null}" th:text="'ITV: ' + ${ITV}" />
+    <b th:if = "${TitaniumPrice !=null}" th:text="'Titanium Price: ' + ${TitaniumPrice}" />
+	<b th:if = "${RPR !=null}" th:text="'RPR: ' + ${RPR}" />
+	<b th:if = "${Rent != null}" th:text="'Rent: ' + ${Rent}" />
+    <b th:if= "${Zillow != null}" th:text="'Zillow Price: ' + ${Zillow}" />
+    <b th:if= "${Trulia != null}" th:text="'Trulia Price: ' + ${Trulia}" />
+    <b th:if= "${Comments != null}" th:text="'Comments: ' + ${Comments}" />
+    <p></p>
+    <iframe width='300' height='300' id='map' th:src="@{'//www.google.com/maps/embed/v1/place?q=' + ${StreetAddress}+${Zip} + ',%20&amp;zoom=15&amp;key=AIzaSyByhq6u0HWA0Y158medwjAwPnYRUIzkCew'}">
+  	</iframe>
       </div>
       <div class="col-sm-2 sidenav">
       </div>
