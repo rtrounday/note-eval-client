@@ -1,7 +1,7 @@
 function getListing(userUid){
   firebase.database().ref('users/' + userUid + "/notes").on('value', function(snapshot){
       $("#listingView").empty();
-      $("#listingView").append("<ul class='list-group'></ul>");
+      $("#listingView").append("<ul id='notelist' class='list-group'></ul>");
       $(".list-group").empty();
       var streetview_key = "AIzaSyCxokrZQ9-C8gCQKYkGtVK0J1X7UXM-9uw";
 

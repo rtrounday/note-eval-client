@@ -2,7 +2,7 @@ function updateFiles(userUid)
 {
   firebase.database().ref('users/' + userUid + "/files").on('value', function(snapshot){
       $("#filesView").empty();
-      $("#filesView").append("<ul class='list-group'></ul>");
+      $("#filesView").append("<ul id='filelist' class='list-group'></ul>");
       $(".list-group").empty();
       snapshot.forEach(function(file){
         var fileName = file.child("name").val();

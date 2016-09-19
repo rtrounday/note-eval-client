@@ -117,3 +117,9 @@ img {
   float: left;
   padding: 10px;
 }
+#notelist:empty::after {
+  content: "You have no synced notes. Please sync one of your uploaded files."
+}
+#filelist:empty::after {
+  content: "You have no files. Please upload a loan note pool sheet."
+}
