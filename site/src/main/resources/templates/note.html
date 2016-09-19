@@ -46,7 +46,7 @@
     <b th:if= "${Trulia != null}" th:text="'Trulia Price: ' + ${Trulia}" />
     <b th:if= "${Comments != null}" th:text="'Comments: ' + ${Comments}" />
     <p></p>
-    <iframe width='300' height='300' id='map' th:src="@{'//www.google.com/maps/embed/v1/place?q=' + ${StreetAddress}+${Zip} + ',%20&amp;zoom=15&amp;key=AIzaSyByhq6u0HWA0Y158medwjAwPnYRUIzkCew'}">
+    <iframe width='300' height='300' id='map' th:src="@{'https://www.google.com/maps/embed/v1/place?q=' + ${StreetAddress}+${Zip} + ',%20&amp;zoom=15&amp;key=AIzaSyByhq6u0HWA0Y158medwjAwPnYRUIzkCew'}">
   	</iframe>
       </div>
       <div class="col-sm-2 sidenav">
