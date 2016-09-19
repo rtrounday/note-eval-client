@@ -1,10 +1,11 @@
 function getListing(userUid){
   firebase.database().ref('users/' + userUid + "/notes").on('value', function(snapshot){
       $("#listingView").empty();
-      $("#listingView").append("<ul class='list-group'></ul>");
+      if (!$("#filesView").is(":visible")){
+      $("#listingView").append("<ul id='notelist' class='list-group'></ul>");
       $(".list-group").empty();
       var streetview_key = "AIzaSyCxokrZQ9-C8gCQKYkGtVK0J1X7UXM-9uw";
-
+      // Iterate through the user's database of notes to show the note address, value and image
       snapshot.forEach(function(note){
         var noteUid = note.key;
         var address = note.child("Street Address").val();
@@ -20,9 +21,11 @@ function getListing(userUid){
                     +   "</li>";
         $(".list-group").append(content);
       });
+    }
   });
 }
 $(document).ready(function(){
+  // Hide other views and display the listing of properties with associated notes
   $("#viewListing").on('click', function(){
     $("#listingView").show()
     $("#filesView, #main").hide()

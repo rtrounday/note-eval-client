@@ -1,8 +1,11 @@
 function updateFiles(userUid)
 {
+  // Sync the file listing view with the latest data in firebase
   firebase.database().ref('users/' + userUid + "/files").on('value', function(snapshot){
       $("#filesView").empty();
-      $("#filesView").append("<ul class='list-group'></ul>");
+      // Don't allow both property listing and file listing to be viewed at once
+      if (!$("#listingView").is(":visible")){
+      $("#filesView").append("<ul id='filelist' class='list-group'></ul>");
       $(".list-group").empty();
       snapshot.forEach(function(file){
         var fileName = file.child("name").val();
@@ -17,13 +20,17 @@ function updateFiles(userUid)
                     + "</a>";
         $(".list-group").append(content);
       });
+    }
   });
+
 }
 $(document).ready(function(){
+  // Hide other views to present the list of files
   $("#viewFiles").on('click', function(){
     $('#filesView').show();
     $("#listingView, #main").hide()
     $("#filesView").empty();
+    // Show it only to authenticated users
     firebase.auth().onAuthStateChanged(function(user){
       if (user)
       {

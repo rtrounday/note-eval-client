@@ -30,6 +30,11 @@
 -Google Maps API integrated with detailed notes view
 -Removed null fields from the detailed view
 
-###Beta v1.2
+###v1.2
 -Improper address verification added to server side
 -Google Street View API integrated to show images of properties in list view
+
+###v1.3
+-Fixed automatic view change to property notes bug
+-Added notifications for sheet file sync progress 
+-Default empty list messages added
