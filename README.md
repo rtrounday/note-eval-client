@@ -9,5 +9,3 @@ View CHANGELOG.md for features
 Report Bugs and Feature Requests to: https://docs.google.com/spreadsheets/d/1rSAV1W6iAXSJXhFRDfDkjVmKMnm2ddXccSciXNZmZww/edit#gid=0
 
 Fallback Static Site on AmazonS3: http://loannotestracker.s3-website-us-west-1.amazonaws.com
-
-Staging Repo: https://github.com/rsandeep15/note-eval-client-staging 
