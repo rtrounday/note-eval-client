@@ -103,6 +103,7 @@ img {
   width: 100%;
   overflow-y: scroll;
   height: 80vh;
+  display: inline-block;
 }
 .list-group li {
   width: 100%;
@@ -113,10 +114,12 @@ img {
   margin: auto;
   float: right;
 }
+/* Formatting for the Google Street view property preview*/
 .list-group li img {
   float: left;
   padding: 10px;
 }
+/* Default feedback for empty lists */
 #notelist:empty::after {
   content: "You have no synced notes. Please sync one of your uploaded files."
 }
