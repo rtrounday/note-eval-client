@@ -37,3 +37,4 @@
 ###v1.3
 -Fixed automatic view change to property notes bug
 -Added notifications for sheet file sync progress 
+-Default empty list messages added
