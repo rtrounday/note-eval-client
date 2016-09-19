@@ -29,3 +29,7 @@
 ###Beta v1.1
 -Google Maps API integrated with detailed notes view
 -Removed null fields from the detailed view
+
+###Beta v1.2
+-Improper address verification added toserver side
+-Google Street View API integrated to show images of properties in list view
