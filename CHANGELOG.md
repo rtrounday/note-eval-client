@@ -31,5 +31,5 @@
 -Removed null fields from the detailed view
 
 ###Beta v1.2
--Improper address verification added toserver side
+-Improper address verification added to server side
 -Google Street View API integrated to show images of properties in list view
