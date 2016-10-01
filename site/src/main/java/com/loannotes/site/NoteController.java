@@ -12,6 +12,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class NoteController {
 	private final String API_SECRET = "ZFwdl0C58Lx7GMxYuEpFCTeBZSdKIZHK4FtKd8f2"; 
 	private final String databaseURLTemplate = "https://loannotesassistant.firebaseio.com/users/%s/notes/%s.json?auth=%s"; 
+	/*
+	 * Given a userUID and a loan note UID, queries the Google Firebase database 
+	 * for detailed information regarding the note. 
+	 */
 	private TreeMap<String, Object> getNoteDetails(String userUid, String noteUid){
 		TreeMap<String, Object> note = new TreeMap<String, Object>(); 
 		String getNoteEndpoint = String.format(databaseURLTemplate, userUid, noteUid, API_SECRET); 
@@ -28,6 +32,9 @@ public class NoteController {
 		}
 		return note; 
 	}
+	/*
+	 * Creates the resulting templated view of the detailed note listing. 
+	 */
 	@RequestMapping("/notedetails")
 	public String getNote(@RequestParam(value="userId", required=true) String userId,
 			@RequestParam(value="noteId", required=true) String noteId, Model model){

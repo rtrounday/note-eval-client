@@ -38,3 +38,7 @@
 -Fixed automatic view change to property notes bug
 -Added notifications for sheet file sync progress 
 -Default empty list messages added
+
+###v1.4
+-Updated UI for detailed loan note view 
+-Tooltip assistant for communicating to the user what the side buttons do
