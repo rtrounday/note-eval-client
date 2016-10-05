@@ -15,11 +15,7 @@ function getListing(userUid){
         var streetViewUrl =
             'https://maps.googleapis.com/maps/api/streetview?' + $.param(params)
         var query = '/notedetails?userId=' + userUid + '&noteId=' + noteUid;
-        var content =  "<li class='list-group-item list-group-item-info'>"
-                    +     "<img src=" + streetViewUrl + ">" + "</img>"
-                    +     "<a href=" + query + ">" + address + '\t' + city + "\t$" + UPB + "</a>"
-                    +   "</li>";
-        $(".list-group").append(content);
+        listProperty(streetViewUrl, query, address, city, UPB);
       });
     }
   });
