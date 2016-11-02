@@ -42,3 +42,6 @@
 ###v1.4
 - Updated UI for detailed loan note view 
 - Tooltip assistant for communicating to the user what the side buttons do
+
+###v1.5
+- Switched note listing to use React.js to improve rendering speeds
