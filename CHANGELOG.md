@@ -45,3 +45,8 @@
 
 ###v1.5
 - Switched note listing to use React.js to improve rendering speeds
+
+###v1.6
+- Color scheme change throughout site
+- Merged all intro content into one page with reactive scrolling
+- Now fits "Modern" webpage paradigm

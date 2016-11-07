@@ -1,8 +1,8 @@
 /* Remove the navbar's default margin-bottom and rounded borders */
-.navbar {
+.navbar{
   margin-bottom: 0;
   border-radius: 0;
-  background-color:#009966;
+  background-color:	#B7C68B;
 }
 .navbar-inverse .navbar-nav>li>a, #home, #back {
   color: #f3f3f3;
@@ -16,14 +16,38 @@
   color:#fff;
   background-color: #003300;
 }
+
+#top{
+  background: url("../img/background.jpg") no-repeat bottom center scroll;
+  padding-top: 100px;
+}
+#main {
+  background: #F4F0CB;
+  opacity: 0.9;
+  color:#266A2E;
+  vertical-align: middle;
+  margin: auto;
+}
+body {
+  background-color: #B3A580;
+}
+#about {
+  background-color: #B3A580;
+  color:#F4F0CB;
+}
+#contact {
+  background-color: #685642;
+  color:#B3A580;
+}
+
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content{height: 100vh}
 
-/* Set gray background color and 100% height */
+/* Set tan background color and 100% height */
 .sidenav {
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: #f1f1f1;
+  background-color: #685642;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -36,8 +60,8 @@
 
 /* Set green background color, white text and some padding */
 footer {
-  background-color:#009966;
-  color: white;
+  background-color:#B7C68B;
+  color: #f3f3f3;
   padding: 15px;
 }
 
