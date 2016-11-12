@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  height = $(window).height();
+  $("section").height(height);
   $("#navigator a").on('click', function(event){
     if (this.hash !== "") {
       event.preventDefault();

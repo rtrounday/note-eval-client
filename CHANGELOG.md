@@ -50,3 +50,6 @@
 - Color scheme change throughout site
 - Merged all intro content into one page with reactive scrolling
 - Now fits "Modern" webpage paradigm
+
+###v1.7
+- Fixed issue on mobile site with section stretching
