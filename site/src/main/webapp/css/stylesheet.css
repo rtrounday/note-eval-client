@@ -30,6 +30,7 @@
 }
 body {
   background-color: #B3A580;
+  font-family: Helvetica;
 }
 #about {
   background-color: #B3A580;
@@ -38,6 +39,10 @@ body {
 #contact {
   background-color: #685642;
   color:#B3A580;
+  margin-bottom: 0px;
+}
+h4 {
+    line-height: 1.8;
 }
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
