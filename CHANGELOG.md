@@ -53,3 +53,6 @@
 
 ###v1.7
 - Fixed issue on mobile site with section stretching
+
+###v1.8
+- Fixed CSS on front page and addressed issues on mobile

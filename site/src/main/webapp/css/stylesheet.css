@@ -44,6 +44,10 @@ body {
 #contact h4 {
     line-height: 1.8;
 }
+table {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content{height: 100vh}
