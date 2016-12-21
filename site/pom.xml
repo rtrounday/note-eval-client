@@ -9,6 +9,9 @@
 
 	<name>site</name>
 	<url>http://maven.apache.org</url>
+	<build>
+		<finalName>loan-notes-site</finalName>
+	</build>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
