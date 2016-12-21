@@ -1,6 +1,8 @@
 package com.loannotes.site;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.StringTokenizer;
 import java.util.TreeMap;
 
@@ -33,15 +35,13 @@ public class NoteController {
 			if (pair.length == 2)
 				note.put(pair[0].replace(" ", ""), pair[1]);
 		}
+		preprocessNote(note); 
 		return note; 
 	}
 	/*
-	 * Creates the resulting templated view of the detailed note listing. 
+	 * 
 	 */
-	@RequestMapping("/notedetails")
-	public String getNote(@RequestParam(value="userId", required=true) String userId,
-			@RequestParam(value="noteId", required=true) String noteId, Model model){
-		TreeMap<String, Object> note = getNoteDetails(userId, noteId); 
+	private void preprocessNote(TreeMap<String, Object> note){
 		// Compute and add the equity 
 		if (note.get("Equity") == null && note.get("Zillow") != null && note.get("CurrentUPB") != null){
 			double unpaidBalance = Double.parseDouble((String)note.get("CurrentUPB")); 
@@ -58,6 +58,28 @@ public class NoteController {
 			double currentPrice = Double.parseDouble(((String)note.get("Zillow")).substring(1)); 
 			note.put("LTV", formatter.format(unpaidBalance/currentPrice));
 		}
+		
+		// Format Date
+		if (note.get("DateofNote") != null){
+			SimpleDateFormat SDF = new SimpleDateFormat("MM/dd/yyyy");
+			System.out.println(note.get("DateofNote"));
+			String formattedDate = SDF.format(new Date(1000 * Long.parseLong((String)note.get("DateofNote"))));
+			note.put("DateofNote", formattedDate); 
+ 		}
+		
+		// Format ITV
+		if (note.get("ITV") != null){
+			String ITV = (String)note.get("ITV"); 
+			note.put("ITV", formatter.format(Double.parseDouble(ITV)));
+		}
+	}
+	/*
+	 * Creates the resulting templated view of the detailed note listing. 
+	 */
+	@RequestMapping("/notedetails")
+	public String getNote(@RequestParam(value="userId", required=true) String userId,
+			@RequestParam(value="noteId", required=true) String noteId, Model model){
+		TreeMap<String, Object> note = getNoteDetails(userId, noteId); 
 		model.addAllAttributes(note);
 		return "note"; 
 	}

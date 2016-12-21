@@ -56,3 +56,7 @@
 
 ###v1.8
 - Fixed CSS on front page and addressed issues on mobile
+###v1.8.1
+- Added Equity and LTV fields in detailed display of note
+###v1.8.2
+- Added preprocessing for all detailed fields to be better human readable

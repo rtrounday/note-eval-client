@@ -3,8 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.loannotes</groupId>
-	<artifactId>loanotes_site</artifactId>
-	<version>1.8</version>
+	<artifactId>loannotes_site</artifactId>
+	<version>1.8.2</version>
 	<packaging>war</packaging>
 
 	<name>site</name>
