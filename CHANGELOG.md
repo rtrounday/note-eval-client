@@ -60,3 +60,6 @@
 - Added Equity and LTV fields in detailed display of note
 ###v1.8.2
 - Added preprocessing for all detailed fields to be better human readable
+###v1.8.3
+- Allows for enter button to be used for login instead of forcing button click 
+- Switched site to support SSL
