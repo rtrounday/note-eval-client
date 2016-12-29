@@ -34,13 +34,13 @@
     	<div class="col-sm-6 text-center">
     		<p th:if = "${CurrentUPB !=null}" th:text="'Current Unpaid Balance: $' + ${CurrentUPB}" />
     		<p th:if = "${Equity != null}" th:text="'Equity: $' + ${Equity}" />
-    		<p th:if = "${LTV != null}" th:text="'LTV: ' + ${LTV}" />
-    		<p th:if = "${Rate !=null}" th:text="'Rate: $' + ${Rate}" />
+    		<p th:if = "${LTV != null}" th:text="'LTV: ' + ${LTV} + '%'" />
+    		<p th:if = "${Rate !=null}" th:text="'Rate: ' + ${Rate} + '%'" />
     		<p th:if = "${RemainingTerm !=null}" th:text="'Remaining Term: ' + ${RemainingTerm}" />
-    		<p th:if = "${LastPaymentReceived !=null}" th:text="'Last Payment Received: $' + ${LastPaymentReceived}" />
-    		<p th:if = "${NextPaymentDue !=null}" th:text="'Next Payment Due: $' + ${NextPaymentDue}" />
+    		<p th:if = "${LastPaymentReceived !=null}" th:text="'Last Payment Received: ' + ${LastPaymentReceived}" />
+    		<p th:if = "${NextPaymentDue !=null}" th:text="'Next Payment Due: ' + ${NextPaymentDue}" />
     		<p th:if = "${BPOValue !=null}" th:text="'BPO Value: $' + ${BPOValue}" />
-    		<p th:if = "${ITV !=null}" th:text="'ITV: $' + ${ITV}" />
+    		<p th:if = "${ITV !=null}" th:text="'ITV: ' + ${ITV} + '%'" />
   		</div>
   		<div>
   		<b th:if = "${TitaniumPrice !=null}" th:text="'Titanium Price: $' + ${TitaniumPrice}" />

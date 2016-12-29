@@ -38,6 +38,13 @@ public class NoteController {
 		preprocessNote(note); 
 		return note; 
 	}
+	private void convertToDate(TreeMap<String, Object> note, String dateKey){
+		if (note.get(dateKey) != null){
+		SimpleDateFormat SDF = new SimpleDateFormat("MM/dd/yyyy");
+		String formattedDate = SDF.format(new Date(1000 * Long.parseLong((String)note.get(dateKey))));
+		note.put(dateKey, formattedDate); 
+		}
+	}
 	/*
 	 * 
 	 */
@@ -56,21 +63,22 @@ public class NoteController {
 		if (note.get("LTV") == null && note.get("Zillow") != null && note.get("CurrentUPB") != null){
 			double unpaidBalance = Double.parseDouble((String)note.get("CurrentUPB")); 
 			double currentPrice = Double.parseDouble(((String)note.get("Zillow")).substring(1)); 
-			note.put("LTV", formatter.format(unpaidBalance/currentPrice));
+			note.put("LTV", formatter.format(100 * unpaidBalance/currentPrice));
 		}
 		
-		// Format Date
-		if (note.get("DateofNote") != null){
-			SimpleDateFormat SDF = new SimpleDateFormat("MM/dd/yyyy");
-			System.out.println(note.get("DateofNote"));
-			String formattedDate = SDF.format(new Date(1000 * Long.parseLong((String)note.get("DateofNote"))));
-			note.put("DateofNote", formattedDate); 
- 		}
+		// Format Dates
+		convertToDate(note, "DateofNote"); 
+		convertToDate(note, "LastPaymentReceived"); 
+		convertToDate(note, "NextPaymentDue"); 
 		
 		// Format ITV
 		if (note.get("ITV") != null){
 			String ITV = (String)note.get("ITV"); 
-			note.put("ITV", formatter.format(Double.parseDouble(ITV)));
+			note.put("ITV", formatter.format(100 * Double.parseDouble(ITV)));
+		}
+		if (note.get("Rate") != null){
+			String rate = (String)note.get("Rate"); 
+			note.put("Rate", formatter.format(100 * Double.parseDouble(rate)));
 		}
 	}
 	/*

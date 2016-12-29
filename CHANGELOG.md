@@ -63,3 +63,6 @@
 ###v1.8.3
 - Allows for enter button to be used for login instead of forcing button click 
 - Switched site to support SSL
+###v1.8.4
+- Fixed formats of detailed note fields
+- Fixed CSS fetching of detailed note view
