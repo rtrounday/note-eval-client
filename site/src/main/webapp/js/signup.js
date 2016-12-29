@@ -106,5 +106,8 @@ function login(email, password){
       $("#lastnameLabel").hide();
       $("#confirmPass").hide();
       $("#loginHeader").text("Login");
-    })
+    });
+    $('form').bind("submit", function(event){
+      event.preventDefault();
+    });
   });

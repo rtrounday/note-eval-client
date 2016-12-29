@@ -58,14 +58,14 @@
             <input name="confirmPass" type="password" class="form-control" placeholder="Confirm Password"/>
           </label>
           <label>
-            <button type="button" id="login" onclick="signInWithFirebase(this.form)" class="btn btn-success">Log In</button>
+            <button type="submit" id="login" onclick="signInWithFirebase(this.form)" class="btn btn-success">Log In</button>
           </label>
           <label>
               <button type="button" onclick="signInFacebook()"id="login" class="btn btn-primary">Log In with
               <i class="fa fa-facebook-square"></i>
               </button>
           <label>
-              <button type="button" onclick="signUpWithFirebase(this.form)"id="signUp" class="btn btn-info">Create Account</button>
+              <button type="submit" onclick="signUpWithFirebase(this.form)"id="signUp" class="btn btn-info">Create Account</button>
           </label>
           <label>
               <p id="errorMessage"><p>
@@ -76,7 +76,6 @@
           </form>
         </div>
         <div class="col-sm-2 sidenav">
-
         </div>
       </div>
     </div>
